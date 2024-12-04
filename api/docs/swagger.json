@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Description of my API",
+        "title": "My API",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "host": "example.com",
+    "basePath": "/api/v1",
+    "paths": {
+        "/cgi-bin/bye.cgi": {
+            "get": {
+                "description": "Returns a JSON object containing a bye message",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "Get Bye Message",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/cmd_bye.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/cgi-bin/hello.cgi": {
+            "get": {
+                "description": "Returns a JSON object containing a hello message",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "Get Hello Message",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/cmd_hello.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "cmd_bye.Response": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "cmd_hello.Response": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

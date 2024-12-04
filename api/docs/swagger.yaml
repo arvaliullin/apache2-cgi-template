@@ -1,0 +1,50 @@
+basePath: /api/v1
+definitions:
+  cmd_bye.Response:
+    properties:
+      message:
+        type: string
+    type: object
+  cmd_hello.Response:
+    properties:
+      message:
+        type: string
+    type: object
+host: example.com
+info:
+  contact: {}
+  description: Description of my API
+  title: My API
+  version: 1.0.0
+paths:
+  /cgi-bin/bye.cgi:
+    get:
+      consumes:
+      - application/json
+      description: Returns a JSON object containing a bye message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/cmd_bye.Response'
+      summary: Get Bye Message
+      tags:
+      - example
+  /cgi-bin/hello.cgi:
+    get:
+      consumes:
+      - application/json
+      description: Returns a JSON object containing a hello message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/cmd_hello.Response'
+      summary: Get Hello Message
+      tags:
+      - example
+swagger: "2.0"
